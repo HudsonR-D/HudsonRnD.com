@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hudson R&D | Resilience Infrastructure & Atmospheric Water Harvesting</title>
+  <meta name="description" content="Hudson R&D is an independent research lab developing patent-pending atmospheric water harvesting systems, energy resilience technology, and modular infrastructure for defense, humanitarian, industrial, and sustainability applications.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .hero-bg { background-image: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)), url('https://picsum.photos/id/1015/2000/1200'); background-size: cover; background-position: center; }
+    .tail-container { max-width: 1280px; margin: 0 auto; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 bg-slate-950/90 backdrop-blur-md z-50 border-b border-slate-800">
+    <div class="tail-container px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Hudson R&D" class="h-9 w-auto">
+        <span class="text-xl font-semibold tracking-tight">Hudson R&D</span>
+      </div>
+      <!-- Desktop nav -->
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="#tech" class="hover:text-teal-400 transition">Technology</a>
+        <a href="#applications" class="hover:text-teal-400 transition">Applications</a>
+        <a href="#research" class="hover:text-teal-400 transition">Research</a>
+        <a href="#lab" class="hover:text-teal-400 transition">The Lab</a>
+        <a href="/proofly" class="hover:text-teal-400 transition font-semibold text-teal-400">Proofly</a>
+        <a href="#about" class="hover:text-teal-400 transition">About</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="hidden sm:inline-flex bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold px-5 py-2.5 rounded-xl text-sm transition">Partner / Inquire</a>
+        <!-- Mobile hamburger -->
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+          <span class="w-6 h-0.5 bg-white transition-all" id="hb-top"></span>
+          <span class="w-6 h-0.5 bg-white transition-all" id="hb-mid"></span>
+          <span class="w-6 h-0.5 bg-white transition-all" id="hb-bot"></span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile dropdown menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="#tech" class="hover:text-teal-400 transition py-1" onclick="closeMobileMenu()">Technology</a>
+      <a href="#applications" class="hover:text-teal-400 transition py-1" onclick="closeMobileMenu()">Applications</a>
+      <a href="#research" class="hover:text-teal-400 transition py-1" onclick="closeMobileMenu()">Research</a>
+      <a href="#lab" class="hover:text-teal-400 transition py-1" onclick="closeMobileMenu()">The Lab</a>
+      <a href="/proofly" class="text-teal-400 font-semibold py-1">Proofly ↗</a>
+      <a href="#about" class="hover:text-teal-400 transition py-1" onclick="closeMobileMenu()">About</a>
+      <a href="#contact" class="bg-teal-500 text-slate-950 font-semibold px-5 py-3 rounded-xl text-center mt-2 hover:bg-teal-400 transition" onclick="closeMobileMenu()">Partner / Inquire</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-bg min-h-screen flex items-center py-20">
+    <div class="tail-container px-6 max-w-3xl">
+      <div class="inline-flex items-center gap-2 bg-teal-500/10 border border-teal-500/30 rounded-full px-4 py-1.5 text-teal-300 text-xs font-semibold tracking-widest mb-6 uppercase">
+        R&amp;D Lab · Patent Pending
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tighter mb-6">
+        Resilience Infrastructure<br class="hidden sm:block"> for a Water-Stressed World
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-300 mb-10 max-w-2xl">Modular atmospheric water harvesting, energy systems, and patent-pending technology designed for defense, humanitarian, industrial, and sustainability deployment.</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#tech" class="bg-white text-slate-950 font-semibold px-8 py-4 rounded-2xl flex items-center justify-center gap-2 hover:bg-slate-200 transition">
+          Explore the Technology <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="border border-white/70 hover:border-white font-medium px-8 py-4 rounded-2xl transition text-center">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHALLENGE -->
+  <section class="py-24 bg-slate-900">
+    <div class="tail-container px-6">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-teal-400 text-sm font-medium tracking-widest mb-3">THE GLOBAL CHALLENGE</h2>
+        <p class="text-4xl font-semibold">Water scarcity is accelerating. Energy and infrastructure constraints make traditional solutions expensive and slow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH PILLARS STRIP -->
+  <section class="py-16 border-b border-slate-800">
+    <div class="tail-container px-6">
+      <p class="text-center text-xs font-semibold tracking-widest text-slate-500 uppercase mb-10">Core Research Focus Areas</p>
+      <div class="grid sm:grid-cols-3 gap-6">
+        <div class="flex gap-4 items-start p-6 bg-slate-900/60 rounded-2xl border border-slate-800 hover:border-teal-500/40 transition">
+          <div class="text-teal-400 text-2xl mt-0.5 w-8 flex-shrink-0"><i class="fas fa-tint"></i></div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Atmospheric Water Harvesting</h3>
+            <p class="text-sm text-slate-400">Patent-pending modular AWH systems with real-time instrumentation for defensible, reproducible data across climate zones.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-6 bg-slate-900/60 rounded-2xl border border-slate-800 hover:border-teal-500/40 transition">
+          <div class="text-teal-400 text-2xl mt-0.5 w-8 flex-shrink-0"><i class="fas fa-bolt"></i></div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Energy Systems & Efficiency</h3>
+            <p class="text-sm text-slate-400">Hybrid configurations that reduce energy and gas consumption, tested across diverse operating conditions.</p>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start p-6 bg-slate-900/60 rounded-2xl border border-slate-800 hover:border-teal-500/40 transition">
+          <div class="text-teal-400 text-2xl mt-0.5 w-8 flex-shrink-0"><i class="fas fa-file-alt"></i></div>
+          <div>
+            <h3 class="font-semibold text-white mb-1">Patents & IP Portfolio</h3>
+            <p class="text-sm text-slate-400">Active patent filings covering novel system architectures, instrumentation methods, and deployment configurations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTION / TECHNOLOGY -->
+  <section id="tech" class="py-24">
+    <div class="tail-container px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-5xl font-semibold mb-8">Our Patent-Pending Platform</h2>
+          <p class="text-lg text-slate-300 mb-8">A fully modular, instrumentable atmospheric water harvesting system designed for rapid iteration, field deployment, and reproducible data.</p>
+          <ul class="space-y-6">
+            <li class="flex gap-4"><i class="fas fa-check-circle text-teal-400 mt-1"></i><span class="text-slate-300">Modular architecture — scale from single units to arrays</span></li>
+            <li class="flex gap-4"><i class="fas fa-check-circle text-teal-400 mt-1"></i><span class="text-slate-300">Real-time instrumentation & KPI tracking</span></li>
+            <li class="flex gap-4"><i class="fas fa-check-circle text-teal-400 mt-1"></i><span class="text-slate-300">Optimized for diverse climates and conditions</span></li>
+          </ul>
+        </div>
+        <div class="bg-slate-800/50 border border-slate-700 rounded-3xl p-8">
+          <div class="aspect-video bg-slate-900 rounded-2xl flex items-center justify-center">
+            <p class="text-slate-500 text-sm">Placeholder for prototype render / diagram (data collection underway)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EARLY RESULTS -->
+  <section class="py-24 bg-slate-900">
+    <div class="tail-container px-6">
+      <h2 class="text-center text-4xl font-semibold mb-12">Early Validation</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-slate-800 p-8 rounded-3xl text-center">
+          <div class="text-5xl font-bold text-teal-400 mb-3">Multiple</div>
+          <p class="text-slate-400">Climate zones &amp; operating conditions simulated</p>
+        </div>
+        <div class="bg-slate-800 p-8 rounded-3xl text-center">
+          <div class="text-5xl font-bold text-teal-400 mb-3">Promising</div>
+          <p class="text-slate-400">Offsets in energy, gas, and water yield</p>
+        </div>
+        <div class="bg-slate-800 p-8 rounded-3xl text-center">
+          <div class="text-5xl font-bold text-teal-400 mb-3">Data-First</div>
+          <p class="text-slate-400">Reproducible, defensible results</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section id="applications" class="py-24">
+    <div class="tail-container px-6">
+      <h2 class="text-4xl font-semibold mb-12 text-center">Where It Matters</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-slate-900 p-8 rounded-3xl hover:bg-slate-800 transition">
+          <h3 class="font-semibold text-xl mb-3">Defense & Resilience</h3>
+          <p class="text-slate-400">Forward operating bases, remote installations, and structured research pilots.</p>
+        </div>
+        <div class="bg-slate-900 p-8 rounded-3xl hover:bg-slate-800 transition">
+          <h3 class="font-semibold text-xl mb-3">Humanitarian & Off-Grid</h3>
+          <p class="text-slate-400">Disaster relief, rural communities, and water-insecure regions.</p>
+        </div>
+        <div class="bg-slate-900 p-8 rounded-3xl hover:bg-slate-800 transition">
+          <h3 class="font-semibold text-xl mb-3">Industrial & Agriculture</h3>
+          <p class="text-slate-400">Cooling towers, greenhouses, and process water needs.</p>
+        </div>
+        <div class="bg-slate-900 p-8 rounded-3xl hover:bg-slate-800 transition">
+          <h3 class="font-semibold text-xl mb-3">Energy & Sustainability</h3>
+          <p class="text-slate-400">Hybrid systems that reduce energy and gas consumption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIPS -->
+  <section id="research" class="py-24 bg-slate-900">
+    <div class="tail-container px-6 max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-8">Open for Collaboration</h2>
+      <p class="text-xl text-slate-300 mb-10">We actively seek SBIR/STTR, DoD, NSF, academic, foundation, and industry pilot partners who want reliable, data-rich atmospheric water solutions.</p>
+      <a href="#contact" class="inline-flex items-center gap-3 bg-white text-slate-950 font-semibold px-10 py-4 rounded-2xl hover:bg-teal-400 hover:text-white transition">
+        Start a conversation <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- THE LAB -->
+  <section id="lab" class="py-24 bg-slate-950">
+    <div class="tail-container px-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <h2 class="text-teal-400 text-sm font-medium tracking-widest mb-3 uppercase">Projects & Research</h2>
+          <h2 class="text-4xl font-semibold">The Lab</h2>
+        </div>
+        <a href="/lab" class="inline-flex items-center gap-2 text-sm font-medium text-slate-400 hover:text-teal-400 transition border border-slate-700 hover:border-teal-500/40 px-5 py-2.5 rounded-xl">
+          View all projects <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1: AWH Gen 1 -->
+        <a href="/lab" class="group block bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition cursor-pointer">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Atmospheric Water</span>
+            <span class="text-xs text-slate-500 bg-slate-800 px-2.5 py-1 rounded-full">Active</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-tint text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">AWH Gen 1 — Prototype & Field Data</h3>
+          <p class="text-sm text-slate-400">Placeholder — add your project summary here. First-gen modular AWH system build, instrumentation stack, and early climate-zone results.</p>
+        </a>
+
+        <!-- Card 2: Energy Systems -->
+        <a href="/lab" class="group block bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition cursor-pointer">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Energy Systems</span>
+            <span class="text-xs text-slate-500 bg-slate-800 px-2.5 py-1 rounded-full">Active</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-bolt text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">Hybrid Energy Reduction Study</h3>
+          <p class="text-sm text-slate-400">Placeholder — add your project summary here. Measuring energy and gas offsets in hybrid AWH/energy configurations.</p>
+        </a>
+
+        <!-- Card 3: IP / Patents -->
+        <a href="/lab" class="group block bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition cursor-pointer">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">IP & Patents</span>
+            <span class="text-xs text-yellow-500/80 bg-yellow-500/10 px-2.5 py-1 rounded-full">Pending</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-file-alt text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">Patent Portfolio</h3>
+          <p class="text-sm text-slate-400">Placeholder — add your project summary here. Active filings covering system architecture, instrumentation methods, and novel deployment configurations.</p>
+        </a>
+
+        <!-- Card 4: Grant Research -->
+        <a href="/lab" class="group block bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition cursor-pointer">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Grant Research</span>
+            <span class="text-xs text-slate-500 bg-slate-800 px-2.5 py-1 rounded-full">Ongoing</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-flask text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">SBIR / STTR Alignment Research</h3>
+          <p class="text-sm text-slate-400">Placeholder — add your project summary here. Scoping AWH applications against DoD, NSF, and DOE program solicitations.</p>
+        </a>
+
+        <!-- Card 5: Proofly -->
+        <a href="/proofly" class="group block bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition cursor-pointer">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Applied Tech</span>
+            <span class="text-xs text-teal-400/80 bg-teal-400/10 px-2.5 py-1 rounded-full">Live</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-id-card text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">Proofly — On-Chain Identity Verification</h3>
+          <p class="text-sm text-slate-400">Blockchain-based identity attestation for government document requests. Built on Base via the Ethereum Attestation Service.</p>
+        </a>
+
+        <!-- Card 6: Coming Soon -->
+        <div class="bg-slate-900/40 border border-dashed border-slate-700 rounded-3xl p-6 flex flex-col items-center justify-center text-center min-h-[280px]">
+          <i class="fas fa-plus text-slate-600 text-2xl mb-3"></i>
+          <p class="text-sm text-slate-500 font-medium">More coming soon</p>
+          <p class="text-xs text-slate-600 mt-1">New projects added as research progresses</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT / FOUNDER BIO -->
+  <section id="about" class="py-24 bg-slate-900">
+    <div class="tail-container px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-start max-w-5xl mx-auto">
+        <div>
+          <h2 class="text-teal-400 text-sm font-medium tracking-widest mb-3 uppercase">About the Lab</h2>
+          <h2 class="text-4xl font-semibold mb-6">Built to solve real infrastructure problems</h2>
+          <div class="space-y-4 text-slate-300 text-lg leading-relaxed">
+            <p>Hudson R&D is an independent research lab focused on developing defensible, deployable infrastructure for a resource-constrained world. Our work spans atmospheric water harvesting, energy systems, and applied technology — all grounded in reproducible data and real-world operating conditions.</p>
+            <p>We pursue active patent filings, pursue SBIR/STTR alignment, and build tools that translate research into tangible products. From AWH prototypes to on-chain identity verification, everything we ship is instrumented and evidence-based.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-5 flex gap-4 items-start">
+            <i class="fas fa-map-marker-alt text-teal-400 mt-1 w-5 flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold text-white">Based in Denver, Colorado</p><p class="text-sm text-slate-400">Operating across diverse climate zones for credible field data.</p></div>
+          </div>
+          <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-5 flex gap-4 items-start">
+            <i class="fas fa-microscope text-teal-400 mt-1 w-5 flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold text-white">Data-first methodology</p><p class="text-sm text-slate-400">Reproducible, defensible results that hold up to grant and partner scrutiny.</p></div>
+          </div>
+          <div class="bg-slate-800/60 border border-slate-700 rounded-2xl p-5 flex gap-4 items-start">
+            <i class="fas fa-handshake text-teal-400 mt-1 w-5 flex-shrink-0"></i>
+            <div><p class="text-sm font-semibold text-white">Open for collaboration</p><p class="text-sm text-slate-400">Actively seeking DoD, NSF, academic, and industry pilot partners.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section id="contact" class="py-24 bg-teal-600">
+    <div class="tail-container px-6 max-w-lg mx-auto text-center">
+      <h2 class="text-4xl font-semibold mb-4">Ready to partner or pilot?</h2>
+      <p class="text-teal-100 mb-10">Whether you’re a program officer, investor, or operator — let’s talk about how modular AWH can fit your mission.</p>
+      
+      <form action="https://formspree.io/f/hudsonr3d@gmail.com" method="POST" class="space-y-6">
+        <input type="text" name="name" placeholder="Your name" required class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-white">
+        <input type="email" name="email" placeholder="Email address" required class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-white">
+        <textarea name="message" placeholder="Tell us about your project or interest..." rows="4" class="w-full bg-white/10 border border-white/30 rounded-2xl px-6 py-4 focus:outline-none focus:border-white"></textarea>
+        <button type="submit" class="w-full bg-slate-950 text-white font-semibold py-5 rounded-2xl hover:bg-black transition">Send message</button>
+      </form>
+      <p class="text-xs text-teal-200 mt-6">Or email directly: <a href="mailto:hudsonr3d@gmail.com" class="underline">hudsonr3d@gmail.com</a></p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-12 border-t border-slate-800">
+    <div class="tail-container px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400">
+      <div>© 2026 Hudson R&D. All rights reserved.</div>
+      <div class="flex flex-wrap gap-6 justify-center md:justify-end">
+        <a href="#lab" class="hover:text-white transition">The Lab</a>
+        <a href="/proofly" class="hover:text-teal-400 transition font-medium">Proofly</a>
+        <a href="/taxes" class="hover:text-white transition">Taxes</a>
+        <a href="https://x.com/HudsonRnD" target="_blank" class="hover:text-white transition"><i class="fab fa-x-twitter mr-1"></i>X</a>
+        <a href="mailto:hudsonr3d@gmail.com" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) {
+        closeMobileMenu();
+      } else {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.getElementById('hb-top').style.transform = 'translateY(8px) rotate(45deg)';
+        document.getElementById('hb-mid').style.opacity = '0';
+        document.getElementById('hb-bot').style.transform = 'translateY(-8px) rotate(-45deg)';
+      }
+    });
+
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      document.getElementById('hb-top').style.transform = '';
+      document.getElementById('hb-mid').style.opacity = '';
+      document.getElementById('hb-bot').style.transform = '';
+    }
+
+    // Close mobile menu on anchor click (already handled by onclick attrs)
+    // Close on resize to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) closeMobileMenu();
+    });
+  </script>
+</body>
+</html>

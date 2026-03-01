@@ -1,0 +1,22 @@
+{
+  "name": "proofly-contracts",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "hardhat compile",
+    "deploy:base": "hardhat run scripts/deploy.ts --network base",
+    "deploy:testnet": "hardhat run scripts/deploy.ts --network base-sepolia",
+    "verify": "hardhat verify --network base"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/node": "^20.0.0",
+    "dotenv": "^16.0.0",
+    "hardhat": "^2.22.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.1.0"
+  }
+}

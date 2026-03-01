@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Tax Prep Reservation | HudsonR&D</title>
+    <meta name="description" content="Reserve your spot for streamlined remote tax preparation. $99 through Jan 31, 2026. Licensed Denver-based tax professional.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 120px;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+
+        .logo-placeholder {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .subheader {
+            color: #ecf0f1;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .cta-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .pricing {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .price-box {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 250px;
+        }
+
+        .price-box.featured {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .price-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4caf50;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0.5rem;
+            transition: background 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #45a049;
+        }
+
+        .cta-button.secondary {
+            background: #666;
+            display: none;
+        }
+
+        .cta-button.secondary:hover {
+            background: #555;
+        }
+
+        .prescreen-button {
+            display: inline-block;
+            background: #2196F3;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .prescreen-button:hover {
+            background: #1976D2;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #4caf50;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .steps {
+            counter-reset: step-counter;
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
+            padding-left: 3rem;
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #4caf50;
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .subheader {
+                font-size: 1rem;
+            }
+
+            .pricing {
+                flex-direction: column;
+            }
+
+            .price-box {
+                max-width: 100%;
+            }
+
+            .cta-button {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="../logo.png" alt="HudsonR&D" class="logo">
+        <h1>Simple Tax Prep Reservation (Remote Filing)</h1>
+        <p class="subheader">Reserve your spot now. File securely once the IRS e-file window opens.</p>
+        <p class="subheader" style="margin-top: 0.5rem; font-size: 0.95rem; opacity: 0.9;">Powered by Intuit, America's most trusted tax software partner.</p>
+    </div>
+
+    <div class="container">
+        <div class="cta-section">
+            <h2 style="border: none; padding: 0;">Pricing</h2>
+            <div class="pricing">
+                <div class="price-box featured">
+                    <div class="price">$99</div>
+                    <div class="price-label">Reservation Rate<br>Through January 31, 2026</div>
+                </div>
+                <div class="price-box">
+                    <div class="price">$125</div>
+                    <div class="price-label">Standard Rate<br>Begins February 1, 2026</div>
+                </div>
+            </div>
+            <a href="https://buy.stripe.com/8x2eV63n9agLaR32Yt8Vi00" class="cta-button" id="primary-cta">Reserve for $99 (through Jan 31)</a>
+            <a href="https://buy.stripe.com/8x29AM7Dp1Kfgbn9mR8Vi01" class="cta-button secondary" id="secondary-cta">Reserve for $125</a>
+            <p style="margin-top: 1rem; color: #666; font-size: 0.95rem;">You'll complete a quick intake form after payment. If your return isn't eligible for the simple program, you can choose to upgrade to full service or request a refund (details below).</p>
+        </div>
+
+        <div class="content-section">
+            <h2>What this is</h2>
+            <p>HudsonR&D is coordinating a limited pilot to streamline simple, remote tax preparation using a secure client portal. Preparation is performed by a licensed Denver-based tax professional.</p>
+        </div>
+
+        <div class="content-section">
+            <h2>What qualifies as a "simple return"</h2>
+            <p>This pilot is designed for returns that can be completed efficiently using professional software and a standardized checklist.</p>
+            
+            <h3>Typical eligible examples:</h3>
+            <ul>
+                <li>W-2 employees</li>
+                <li>Gig workers / 1099 income (straightforward, no complex structures)</li>
+                <li>Renters</li>
+                <li>Homeowners with common forms (e.g., mortgage interest) when it stays straightforward</li>
+                <li>Standard credits and routine documentation</li>
+            </ul>
+
+            <h3>What's usually NOT included (may require upgrade)</h3>
+            <p>If your situation requires deeper review, additional forms, or more time, it may fall outside the simple-return pilot.</p>
+            
+            <p><strong>Common upgrade triggers:</strong></p>
+            <ul>
+                <li>Complex itemized deductions or extensive write-offs</li>
+                <li>Multiple states with complexity beyond standard handling</li>
+                <li>Business entities (LLCs with multi-member filings, S-Corp, etc.)</li>
+                <li>Significant investment activity (active trading, complicated brokerage reporting)</li>
+                <li>Crypto reporting that requires specialized reconciliation</li>
+                <li>Rental property schedules and more complex real estate scenarios</li>
+                <li>Anything that requires manual reconstruction due to missing documentation</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>If you're unsure, submit the intake — we'll screen it quickly.</strong>
+                <br>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSePOSrOK76UefejWY2sJw4Ff6vyOpJ3gd9oMUydROhaRh1XOQ/viewform?usp=dialog" class="prescreen-button" target="_blank">Submit Pre-Screen Form</a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>How it works</h2>
+            <ol class="steps">
+                <li>Pay to reserve your spot ($99 through Jan 31, then $125)</li>
+                <li>Complete the quick intake form (2–3 minutes)</li>
+                <li>When filing opens, you'll receive a secure upload invitation via the client portal</li>
+                <li>Upload documents, answer the checklist, and track progress</li>
+                <li>Your return is prepared and reviewed by a licensed professional</li>
+            </ol>
+        </div>
+
+        <div class="content-section">
+            <h2>Security & privacy</h2>
+            <ul>
+                <li>Document upload and intake run through a secure, encrypted client portal</li>
+                <li>We do not ask for bank account details during reservation</li>
+                <li>No advertising retargeting, and no selling client data as part of this pilot</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Refunds / upgrades</h2>
+            <p>If your return is not eligible for the simple program:</p>
+            <ul>
+                <li>You can apply your reservation toward full service, or</li>
+                <li>Request a refund processed within 30 days</li>
+            </ul>
+        </div>
+
+        <div class="cta-section">
+            <h2 style="border: none; padding: 0; margin-bottom: 1rem;">Ready to get started?</h2>
+            <a href="https://buy.stripe.com/8wU3cx0aX6126wE3cc" class="cta-button" id="bottom-cta">Reserve for $99 (through Jan 31)</a>
+            <a href="https://buy.stripe.com/8wU9AM7Dp1Kf1gc9AC" class="cta-button secondary" id="bottom-secondary-cta">Reserve for $125</a>
+        </div>
+    </div>
+
+    <div class="footer">
+        Reservations coordinated by HudsonR&D. Preparation performed by a licensed tax professional based in Denver, Colorado.
+    </div>
+
+    <script>
+        // Switch to $125 pricing after January 31, 2026
+        function updatePricing() {
+            const now = new Date();
+            const cutoffDate = new Date('2026-02-01T00:00:00');
+            
+            if (now >= cutoffDate) {
+                // Hide $99 buttons, show $125 buttons
+                document.querySelectorAll('#primary-cta, #bottom-cta').forEach(btn => {
+                    btn.style.display = 'none';
+                });
+                document.querySelectorAll('#secondary-cta, #bottom-secondary-cta').forEach(btn => {
+                    btn.style.display = 'inline-block';
+                });
+                
+                // Update featured price box
+                const priceBoxes = document.querySelectorAll('.price-box');
+                if (priceBoxes.length >= 2) {
+                    priceBoxes[0].classList.remove('featured');
+                    priceBoxes[1].classList.add('featured');
+                }
+            }
+        }
+        
+        updatePricing();
+    </script>
+</body>
+</html>
