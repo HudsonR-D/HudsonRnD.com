@@ -8,6 +8,7 @@ import { mailPacketToVitalRecords, mailFeeCheck } from '@/lib/lob';
 import { runDeletionPipeline, verifyFileHash } from '@/lib/deletion';
 import { emitAttestations } from '@/lib/eas';
 import { sendConfirmationEmail } from '@/lib/email';
+import { dlqPush } from '@/lib/deadLetter';
 
 // Generate a human-readable request reference
 function generateRequestRef(): string {
@@ -240,6 +241,31 @@ export async function processRequest(input: ProcessInput): Promise<ProcessResult
       // KV not configured — confirmation page falls back to email
     }
 
+    // ── Write derived boolean claims to Stripe session metadata ───────────────
+    // These are used later by /api/mint-credential to build the on-chain payload.
+    // We store only boolean flags + stateCode — no PII.
+    try {
+      const Stripe = (await import('stripe')).default;
+      const stripeKey = process.env.STRIPE_SECRET_KEY;
+      if (stripeKey) {
+        const stripe = new Stripe(stripeKey);
+        const stateConfig = getState(stateCode);
+        const isStateResident = formData.state?.toUpperCase() === stateCode;
+        await stripe.checkout.sessions.update(input.stripeSessionId, {
+          metadata: {
+            requestRef,
+            stateCode,
+            certObtained:    'true',
+            isAgeOver18:     (stateConfig.fees?.minimumAge ?? 0) >= 18 ? 'true' : 'false',
+            isAgeOver21:     'false', // conservative default; updated by age-gate when implemented
+            isStateResident: isStateResident ? 'true' : 'false',
+          },
+        });
+      }
+    } catch (stripeMetaErr) {
+      // Non-fatal — mint will still work, it just won't have boolean claims
+      console.warn('[process] Could not update Stripe session metadata:', stripeMetaErr);
+    }
 
     return {
       requestRef,
@@ -262,6 +288,27 @@ export async function processRequest(input: ProcessInput): Promise<ProcessResult
       console.log(`[process] Blob deleted during error recovery for ${requestRef}`);
     } catch (delErr) {
       console.error(`[process] Could not delete blob during error recovery:`, delErr);
+    }
+
+    // ── Push to dead-letter queue ─────────────────────────────────────────────
+    try {
+      await dlqPush({
+        requestRef,
+        stripeSessionId: input.stripeSessionId,
+        stateCode:       input.stateCode,
+        email:           input.formData.email,
+        failedAt:        new Date().toISOString(),
+        error:           err instanceof Error ? err.message : String(err),
+        attempt:         1,
+        payload:         {
+          stateCode: input.stateCode,
+          copies:    input.copies,
+          fileHash:  input.fileHash,
+          // Intentionally omit blobUrl (deleted) and raw formData (PII)
+        },
+      });
+    } catch (dlqErr) {
+      console.error('[process] DLQ push failed:', dlqErr);
     }
 
     throw err; // re-throw so webhook handler can log and return 500

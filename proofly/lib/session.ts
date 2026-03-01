@@ -50,6 +50,12 @@ export interface ProoflySession {
       deletion: string | null;
     };
   };
+
+  claim: {
+    tokenId: number | null;
+    txHash: string | null;
+    mintedAt: string | null;
+  };
 }
 
 const SESSION_KEY = 'prooflySession_v1';
