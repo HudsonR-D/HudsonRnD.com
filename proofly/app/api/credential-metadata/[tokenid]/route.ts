@@ -22,9 +22,10 @@ const STATE_NAMES: Record<string, string> = {
  */
 export async function GET(
   _request: NextRequest,
-  { params }: { params: { tokenId: string } },
+  { params }: { params: Promise<{ tokenid: string }> },
 ): Promise<NextResponse> {
-  const tokenId = parseInt(params.tokenId, 10);
+  const { tokenid } = await params;
+  const tokenId = parseInt(tokenid, 10);
   if (isNaN(tokenId) || tokenId < 1) {
     return NextResponse.json({ error: 'Invalid token ID' }, { status: 400 });
   }
