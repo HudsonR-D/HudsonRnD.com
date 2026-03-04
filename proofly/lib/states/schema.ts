@@ -22,6 +22,7 @@ export interface StateConfig {
     prooflyService: number;  // cents
     lobPostage: number;      // cents — Lob print+mail cost passed through to user
     checkMemo: string;       // who the check is payable to
+    minimumAge?: number;     // minimum age required; omit if no age restriction
   };
 
   form: {

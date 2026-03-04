@@ -2,9 +2,6 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   serverExternalPackages: ['ethers', 'lob', 'resend'],
-  turbopack: {
-    root: __dirname,
-  },
   async headers() {
     return [
       {
