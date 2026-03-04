@@ -116,7 +116,7 @@ export default function RequestPage() {
     e.preventDefault();
     if (!validate()) return;
     saveSession({ stateCode, form });
-    router.push('/upload');
+    router.push('/id-upload');
   };
 
   let stateConfig;
