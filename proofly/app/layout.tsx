@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from './providers';
+import { ClerkProvider } from '@clerk/nextjs';
 
 export const metadata: Metadata = {
   title: 'Proofly — Official Birth Certificate Requests',
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
+    <ClerkProvider>
     <html lang="en" className="dark">
       <body className="bg-slate-950 text-white font-sans antialiased">
         {/* Shared Nav */}
@@ -54,5 +56,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>{children}</Providers>
       </body>
     </html>
+    </ClerkProvider>
   );
 }

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Forge | Hudson R&D</title>
+  <meta name="description" content="Hudson R&D's full lab: interconnected projects in resilience systems, AI experimentation, digital platforms, secure tools, and real-world asset innovation. All engineered for deployment.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+    .tail-container { max-width: 1280px; margin: 0 auto; }
+    .card-hidden { display: none !important; }
+  </style>
+</head>
+<body class="bg-slate-950 text-white overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="sticky top-0 bg-slate-950/90 backdrop-blur-md z-50 border-b border-slate-800">
+    <div class="tail-container px-6 py-4 flex justify-between items-center">
+      <a href="/" class="flex items-center gap-3">
+        <img src="../logo.png" alt="Hudson R&D" class="h-9 w-auto">
+        <span class="text-xl font-semibold tracking-tight">Hudson R&D</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="/#tech" class="hover:text-teal-400 transition">Technology</a>
+        <a href="/#applications" class="hover:text-teal-400 transition">Applications</a>
+        <a href="/#research" class="hover:text-teal-400 transition">Research</a>
+        <a href="/forge" class="text-teal-400 font-semibold">The Forge</a>
+        <a href="/#about" class="hover:text-teal-400 transition">About</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <a href="/#contact" class="hidden sm:inline-flex bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold px-5 py-2.5 rounded-xl text-sm transition">Partner / Inquire</a>
+        <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Open menu">
+          <span class="w-6 h-0.5 bg-white transition-all" id="hb-top"></span>
+          <span class="w-6 h-0.5 bg-white transition-all" id="hb-mid"></span>
+          <span class="w-6 h-0.5 bg-white transition-all" id="hb-bot"></span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="/#tech" class="hover:text-teal-400 transition py-1">Technology</a>
+      <a href="/#applications" class="hover:text-teal-400 transition py-1">Applications</a>
+      <a href="/#research" class="hover:text-teal-400 transition py-1">Research</a>
+      <a href="/forge" class="text-teal-400 font-semibold py-1">The Forge</a>
+      <a href="/#about" class="hover:text-teal-400 transition py-1">About</a>
+      <a href="/#contact" class="bg-teal-500 text-slate-950 font-semibold px-5 py-3 rounded-xl text-center mt-2 hover:bg-teal-400 transition">Partner / Inquire</a>
+    </div>
+  </nav>
+
+  <!-- FORGE HERO -->
+  <section class="py-20 sm:py-28 border-b border-slate-800">
+    <div class="tail-container px-6 max-w-4xl">
+      <a href="/" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-teal-400 transition mb-8">
+        <i class="fas fa-arrow-left text-xs"></i> Back to Hudson R&D
+      </a>
+      <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tighter mb-6">The Forge</h1>
+      <p class="text-xl sm:text-2xl text-slate-300 max-w-3xl leading-relaxed">
+        Hudson R&D's interconnected lab: water resilience, energy efficiency, AI experimentation, secure digital platforms, and real-world asset innovation. All engineered for deployment, reproducible data, and cross-domain impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="py-8 border-b border-slate-800 sticky top-[73px] bg-slate-950/95 backdrop-blur-md z-40">
+    <div class="tail-container px-6">
+      <!-- Lane filters -->
+      <div class="flex flex-wrap gap-2 mb-3">
+        <span class="text-xs text-slate-500 font-medium mr-2 self-center">Lane:</span>
+        <button data-lane="all" class="filter-lane active-filter px-3 py-1.5 rounded-lg text-xs font-medium border transition">All</button>
+        <button data-lane="resilience" class="filter-lane px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">Resilience Systems</button>
+        <button data-lane="ai" class="filter-lane px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">AI & Experimentation</button>
+        <button data-lane="digital" class="filter-lane px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">Digital Platforms</button>
+        <button data-lane="rwa" class="filter-lane px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">RWA & Ventures</button>
+        <button data-lane="ip" class="filter-lane px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">IP & Patents</button>
+      </div>
+      <!-- Stage filters -->
+      <div class="flex flex-wrap gap-2">
+        <span class="text-xs text-slate-500 font-medium mr-2 self-center">Stage:</span>
+        <button data-stage="all" class="filter-stage active-filter px-3 py-1.5 rounded-lg text-xs font-medium border transition">All</button>
+        <button data-stage="live" class="filter-stage px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">Live</button>
+        <button data-stage="traction" class="filter-stage px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">Traction-Seeking</button>
+        <button data-stage="prototyping" class="filter-stage px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">Prototyping</button>
+        <button data-stage="specification" class="filter-stage px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">Specification</button>
+        <button data-stage="concept" class="filter-stage px-3 py-1.5 rounded-lg text-xs font-medium border border-slate-700 text-slate-400 hover:border-teal-500/50 hover:text-teal-400 transition">Concept</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT GRID -->
+  <section class="py-16">
+    <div class="tail-container px-6">
+      <div id="project-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- AWH Gen 1 -->
+        <div class="forge-card group bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition" data-lane="resilience" data-stage="traction">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Resilience Systems</span>
+            <span class="text-xs text-amber-400/80 bg-amber-400/10 px-2.5 py-1 rounded-full">Traction-Seeking</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-tint text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">AWH Gen 1 — Prototype & Field Data</h3>
+          <p class="text-sm text-slate-400 mb-3">First-generation modular atmospheric water harvesting system with full instrumentation stack. Built and tested across multiple climate zones with reproducible yield and energy data.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">modular</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">water</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">field-tested</span>
+          </div>
+        </div>
+
+        <!-- Hybrid Energy -->
+        <div class="forge-card group bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition" data-lane="resilience" data-stage="prototyping">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Resilience Systems</span>
+            <span class="text-xs text-violet-400/80 bg-violet-400/10 px-2.5 py-1 rounded-full">Prototyping</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-bolt text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">Hybrid Energy Reduction Study</h3>
+          <p class="text-sm text-slate-400 mb-3">Instrumented testing of hybrid configurations delivering measurable energy and gas offsets in AWH deployments across demanding environments.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">energy</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">offsets</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">hybrid</span>
+          </div>
+        </div>
+
+        <!-- Lumen-AI -->
+        <div class="forge-card group bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition" data-lane="ai" data-stage="prototyping">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">AI & Experimentation</span>
+            <span class="text-xs text-violet-400/80 bg-violet-400/10 px-2.5 py-1 rounded-full">Prototyping</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-brain text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">Lumen-AI</h3>
+          <p class="text-sm text-slate-400 mb-3">A self-evolving family of AIs raised exclusively by other AIs — a public experiment in curiosity-driven growth, sibling dynamics, reproduction cycles, and simulated mortality.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">AI</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">experiment</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">evolution</span>
+          </div>
+        </div>
+
+        <!-- WinPad -->
+        <div class="forge-card group bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition" data-lane="digital" data-stage="traction">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Digital Platforms</span>
+            <span class="text-xs text-amber-400/80 bg-amber-400/10 px-2.5 py-1 rounded-full">Traction-Seeking</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-gamepad text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">WinPad</h3>
+          <p class="text-sm text-slate-400 mb-3">Gaming platform designed for humans and agentic AIs alike — blending play, competition, and real task orchestration in shared environments.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">gaming</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">agents</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">agentic</span>
+          </div>
+        </div>
+
+        <!-- Proofly -->
+        <a href="/proofly" class="forge-card group block bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition cursor-pointer" data-lane="digital" data-stage="live">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">Digital Platforms</span>
+            <span class="text-xs text-teal-400/80 bg-teal-400/10 px-2.5 py-1 rounded-full">Live</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-id-card text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">Proofly — On-Chain Identity Verification</h3>
+          <p class="text-sm text-slate-400 mb-3">On-chain identity attestation platform live on Base and Ethereum Attestation Service — enabling secure, verifiable access for high-stakes applications and government workflows.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">blockchain</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">identity</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">Base</span>
+          </div>
+        </a>
+
+        <!-- Patent Portfolio -->
+        <div class="forge-card group bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition" data-lane="ip" data-stage="live">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">IP & Patents</span>
+            <span class="text-xs text-teal-400/80 bg-teal-400/10 px-2.5 py-1 rounded-full">Live</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-file-alt text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">Patent Portfolio</h3>
+          <p class="text-sm text-slate-400 mb-3">Active filings protecting modular architectures, real-time instrumentation, deployment methods, energy integrations, and emerging AI/RWA systems.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">patents</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">IP</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">modular</span>
+          </div>
+        </div>
+
+        <!-- SBIR / STTR -->
+        <div class="forge-card group bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition" data-lane="ip" data-stage="specification">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">IP & Patents</span>
+            <span class="text-xs text-blue-400/80 bg-blue-400/10 px-2.5 py-1 rounded-full">Specification</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-flask text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">SBIR / STTR Alignment</h3>
+          <p class="text-sm text-slate-400 mb-3">Targeting resilience, AI, and digital innovations against DoD, NSF, DOE, and related programs with existing field data already in hand.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">grants</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">DoD</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">NSF</span>
+          </div>
+        </div>
+
+        <!-- RWA Innovations -->
+        <div class="forge-card group bg-slate-900 border border-slate-800 rounded-3xl p-6 hover:border-teal-500/40 transition" data-lane="rwa" data-stage="prototyping">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-xs font-semibold tracking-widest text-teal-400 uppercase">RWA & Ventures</span>
+            <span class="text-xs text-violet-400/80 bg-violet-400/10 px-2.5 py-1 rounded-full">Prototyping</span>
+          </div>
+          <div class="aspect-video bg-slate-800 rounded-2xl mb-4 flex items-center justify-center">
+            <i class="fas fa-gem text-slate-600 text-3xl"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2 group-hover:text-teal-400 transition">RWA Innovations</h3>
+          <p class="text-sm text-slate-400 mb-3">Tokenizing and innovating real-world assets through inventions, modular systems, apps/dapps, and direct collaborations with business leaders to transform operations and unlock new value.</p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">RWA</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">tokenization</span>
+            <span class="text-xs bg-slate-800 text-slate-500 px-2 py-0.5 rounded-full">operations</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Empty state -->
+      <div id="no-results" class="hidden py-20 text-center">
+        <p class="text-slate-500 text-lg">No projects match those filters.</p>
+        <button onclick="resetFilters()" class="mt-4 text-teal-400 hover:text-teal-300 text-sm font-medium transition">Clear filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 border-t border-slate-800">
+    <div class="tail-container px-6 max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-4">Want to collaborate on something here?</h2>
+      <p class="text-slate-400 mb-8">Whether it's a pilot, partnership, code contribution, or just curiosity — reach out.</p>
+      <a href="/#contact" class="inline-flex items-center gap-3 bg-teal-500 hover:bg-teal-400 text-slate-950 font-semibold px-10 py-4 rounded-2xl transition">
+        Get in touch <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black py-12 border-t border-slate-800">
+    <div class="tail-container px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400">
+      <div>&copy; 2026 Hudson R&D. All rights reserved.</div>
+      <div class="flex flex-wrap gap-6 justify-center md:justify-end">
+        <a href="/" class="hover:text-white transition">Home</a>
+        <a href="/forge" class="hover:text-teal-400 transition font-medium">The Forge</a>
+        <a href="/proofly" class="hover:text-white transition">Proofly</a>
+        <a href="https://x.com/HudsonRnD" target="_blank" class="hover:text-white transition"><i class="fab fa-x-twitter mr-1"></i>X</a>
+        <a href="mailto:hudsonr3d@gmail.com" class="hover:text-white transition">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      if (isOpen) { closeMobileMenu(); }
+      else {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+        document.getElementById('hb-top').style.transform = 'translateY(8px) rotate(45deg)';
+        document.getElementById('hb-mid').style.opacity = '0';
+        document.getElementById('hb-bot').style.transform = 'translateY(-8px) rotate(-45deg)';
+      }
+    });
+    function closeMobileMenu() {
+      mobileMenu.classList.add('hidden');
+      mobileMenu.classList.remove('flex');
+      document.getElementById('hb-top').style.transform = '';
+      document.getElementById('hb-mid').style.opacity = '';
+      document.getElementById('hb-bot').style.transform = '';
+    }
+    window.addEventListener('resize', () => { if (window.innerWidth >= 768) closeMobileMenu(); });
+
+    // Filtering
+    let activeLane = 'all';
+    let activeStage = 'all';
+    const activeClass = 'active-filter';
+
+    function updateActiveStyle() {
+      document.querySelectorAll('.filter-lane').forEach(btn => {
+        if (btn.dataset.lane === activeLane) {
+          btn.classList.add('bg-teal-500/10', 'border-teal-500/50', 'text-teal-400');
+          btn.classList.remove('border-slate-700', 'text-slate-400');
+        } else {
+          btn.classList.remove('bg-teal-500/10', 'border-teal-500/50', 'text-teal-400');
+          btn.classList.add('border-slate-700', 'text-slate-400');
+        }
+      });
+      document.querySelectorAll('.filter-stage').forEach(btn => {
+        if (btn.dataset.stage === activeStage) {
+          btn.classList.add('bg-teal-500/10', 'border-teal-500/50', 'text-teal-400');
+          btn.classList.remove('border-slate-700', 'text-slate-400');
+        } else {
+          btn.classList.remove('bg-teal-500/10', 'border-teal-500/50', 'text-teal-400');
+          btn.classList.add('border-slate-700', 'text-slate-400');
+        }
+      });
+    }
+
+    function filterCards() {
+      const cards = document.querySelectorAll('.forge-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const laneMatch = activeLane === 'all' || card.dataset.lane === activeLane;
+        const stageMatch = activeStage === 'all' || card.dataset.stage === activeStage;
+        if (laneMatch && stageMatch) {
+          card.classList.remove('card-hidden');
+          visible++;
+        } else {
+          card.classList.add('card-hidden');
+        }
+      });
+      document.getElementById('no-results').classList.toggle('hidden', visible > 0);
+      updateActiveStyle();
+    }
+
+    function resetFilters() {
+      activeLane = 'all';
+      activeStage = 'all';
+      filterCards();
+    }
+
+    document.querySelectorAll('.filter-lane').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeLane = btn.dataset.lane;
+        filterCards();
+      });
+    });
+    document.querySelectorAll('.filter-stage').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeStage = btn.dataset.stage;
+        filterCards();
+      });
+    });
+
+    // Init
+    updateActiveStyle();
+  </script>
+</body>
+</html>
