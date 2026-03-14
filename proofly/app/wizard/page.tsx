@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, useRef } from "react";
 
@@ -7,7 +7,7 @@ const MODELS = [
     id: "claude",
     label: "Claude",
     vendor: "Anthropic",
-    icon: "◆",
+    icon: "â—†",
     color: "#e2a84b",
     hint: "Loves XML structure, reasoning chains, explicit constraints"
   },
@@ -15,7 +15,7 @@ const MODELS = [
     id: "gpt",
     label: "ChatGPT / o1",
     vendor: "OpenAI",
-    icon: "●",
+    icon: "â—",
     color: "#10b981",
     hint: "Strong role definition, markdown structure, step-by-step chain of thought"
   },
@@ -23,7 +23,7 @@ const MODELS = [
     id: "grok",
     label: "Grok",
     vendor: "xAI",
-    icon: "✦",
+    icon: "âœ¦",
     color: "#8b5cf6",
     hint: "Direct, fewer guardrails, strong verbs, minimal fluff"
   },
@@ -31,7 +31,7 @@ const MODELS = [
     id: "gemini",
     label: "Gemini",
     vendor: "Google",
-    icon: "✿",
+    icon: "âœ¿",
     color: "#3b82f6",
     hint: "Markdown-first, explicit multi-step reasoning, context-rich framing"
   }
@@ -109,14 +109,14 @@ export default function PromptWizard() {
       {/* Header */}
       <div style={{ borderBottom: "1px solid #1a1a1a", padding: "20px 32px", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <span style={{ fontSize: "22px", color: "#e2a84b" }}>⬡</span>
+          <span style={{ fontSize: "22px", color: "#e2a84b" }}>â¬¡</span>
           <span style={{ fontFamily: "'Syne', sans-serif", fontWeight: 700, fontSize: "15px", letterSpacing: "0.08em", color: "#fff" }}>
             PROMPT WIZARD
           </span>
           <span style={{ fontSize: "11px", color: "#444", letterSpacing: "0.1em" }}>v3.0</span>
         </div>
         <div style={{ fontSize: "11px", color: "#333", letterSpacing: "0.08em" }}>
-          NO STORAGE · NO LOGS · DIES ON REFRESH
+          NO STORAGE Â· NO LOGS Â· DIES ON REFRESH
         </div>
       </div>
 
@@ -138,10 +138,21 @@ export default function PromptWizard() {
             not a template.
           </div>
           <p style={{ color: "#555", fontSize: "15px", maxWidth: "460px", lineHeight: 1.6, fontFamily: "'Syne', sans-serif", fontWeight: 400 }}>
-            Paste any rough idea, shower thought, or half-baked request. Get back a precision-engineered prompt tuned for your model — using real best practices, not XML cargo cult.
+            Paste any rough idea, shower thought, or half-baked request. Get back a precision-engineered prompt tuned for your model â€” using real best practices, not XML cargo cult.
           </p>
         </div>
-
+        <div style={{
+          marginBottom: "36px",
+          padding: "16px 18px",
+          border: "1px solid #1c1c1c",
+          borderRadius: "6px",
+          background: "#0d0d0d"
+        }}>
+          <div style={{ fontSize: "10px", letterSpacing: "0.15em", color: "#444", marginBottom: "8px" }}>AI RUNTIME POLICY</div>
+          <div style={{ color: "#666", fontSize: "12px", lineHeight: 1.7 }}>
+            Cloud prompt upgrades are disabled by default and only run in authenticated mode. Local NVIDIA and Nemotron paths should win when they are practical and cost-effective.
+          </div>
+        </div>
         {/* Model Selector */}
         <div style={{ marginBottom: "36px" }}>
           <div style={{ fontSize: "10px", letterSpacing: "0.15em", color: "#444", marginBottom: "12px" }}>TARGET MODEL</div>
@@ -169,7 +180,7 @@ export default function PromptWizard() {
             ))}
           </div>
           <div style={{ marginTop: "10px", fontSize: "11px", color: "#383838", fontStyle: "italic" }}>
-            ↳ {model.hint}
+            â†³ {model.hint}
           </div>
         </div>
 
@@ -179,7 +190,7 @@ export default function PromptWizard() {
           <textarea
             value={rawPrompt}
             onChange={e => setRawPrompt(e.target.value)}
-            placeholder="Dump it here. Half-baked ideas, 2am ramblings, vague shower thoughts. The messier the better — that's the point."
+            placeholder="Dump it here. Half-baked ideas, 2am ramblings, vague shower thoughts. The messier the better â€” that's the point."
             rows={8}
             style={{
               width: "100%",
@@ -227,10 +238,10 @@ export default function PromptWizard() {
         >
           {loading ? (
             <>
-              <span style={{ display: "inline-block", animation: "spin 1s linear infinite", fontSize: "16px" }}>⬡</span>
+              <span style={{ display: "inline-block", animation: "spin 1s linear infinite", fontSize: "16px" }}>â¬¡</span>
               ANALYZING & REBUILDING...
             </>
-          ) : "ENHANCE THIS PROMPT →"}
+          ) : "ENHANCE THIS PROMPT â†’"}
         </button>
 
         {/* Error */}
@@ -309,7 +320,7 @@ export default function PromptWizard() {
                       fontFamily: "'DM Mono', monospace"
                     }}
                   >
-                    {copied ? "✓ COPIED" : "COPY"}
+                    {copied ? "âœ“ COPIED" : "COPY"}
                   </button>
                 </div>
                 <div style={{
@@ -337,7 +348,7 @@ export default function PromptWizard() {
               <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 {result.improvements?.map((imp: string, i: number) => (
                   <div key={i} style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                    <span style={{ color: model.color, fontSize: "12px", marginTop: "1px", flexShrink: 0 }}>→</span>
+                    <span style={{ color: model.color, fontSize: "12px", marginTop: "1px", flexShrink: 0 }}>â†’</span>
                     <span style={{ fontSize: "13px", color: "#666", lineHeight: 1.6 }}>{imp}</span>
                   </div>
                 ))}
@@ -359,7 +370,7 @@ export default function PromptWizard() {
         {/* Footer */}
         <div style={{ marginTop: "80px", paddingTop: "24px", borderTop: "1px solid #111", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={{ fontSize: "11px", color: "#282828" }}>Best practices updated continuously</div>
-          <div style={{ fontSize: "11px", color: "#282828" }}>No logs · No storage · Key never leaves server</div>
+          <div style={{ fontSize: "11px", color: "#282828" }}>Cloud mode opt-in only - key never leaves server</div>
         </div>
       </div>
     </div>
